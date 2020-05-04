@@ -1,31 +1,27 @@
-let http = require('http')
-let fs = require('fs')
+var express = require("express");
+var app = express();
 
-let url=require('url')
+app.set('view engine' , 'ejs')
 
-let server = http.createServer()
-server.on ('request' ,(request , reponse)=>{
+app.get("/name/:name",function(req,res){
+     let name = req.params.name ;
+     
+   
+     res.render('index',{name:name})
+ 
+  });
 
-    reponse.writeHead(200)
-   let query = url.parse(request.url, true).query
-
-   let name = query.name === undefind ? 'anonyme' :query.name
-   fs.readFile('./index.html' ,'utf8' ,(err,data) =>{
-       if(err){
-           reponse.writeHead(404)
-           reponse.end("ce fichier n'exite pas")
-
-       }else{
-           reponse.writeHead(200 ,{
-               'Content-type':'text/html; charset =utf-8'
-           })
-
-           data =data.replace('{{ name}}', name)
-           reponse.end(data)
-       }
-   })
+  app.get("/name/",function(req,res)
+  {
+    
+    let name = "unknown" ;
+    
   
+    res.render('index',{name:name})
 
-})
-console.log('done')
-server.listen(4242);
+ });
+
+app.listen(4242,function(){
+  console.log("done");
+});
+
