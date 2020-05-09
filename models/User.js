@@ -3,14 +3,17 @@ const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
     login:{
-        type: string
+        type: String
     },
     email:{
-        type: string
+        type: String
     },
     password:{
-        type: string
+        type: String
     }, 
+    type:{
+        type: Boolean
+    }
    
 })
 

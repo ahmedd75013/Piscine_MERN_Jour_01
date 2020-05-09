@@ -42,21 +42,19 @@ class Register extends Component {
               <h1 className="h3 mb-3 font-weight-normal">Register</h1>
               <div className="form-group">
                 <label htmlFor="login">Login</label>
-                <input type="text" className="form-control"name="login "placeholder="Enter your first login" value={this.state.login} onChange={this.onChange}/>
+               <input type="text" placeholder="Enter Username" name="login" requiredvalue={this.state.login} onChange={this.onChange}/>
               </div>
               <div className="form-group">
                 <label htmlFor="name">email</label>
-                <input
-                  type="email"className="form-control"name="email"placeholder="Enter your email"value={this.state.email}onChange={this.onChange}/>
+                <input type="email"className="form-control"name="email"placeholder="Enter your email"value={this.state.email}onChange={this.onChange}/>
               </div>
               <div className="form-group">
                 <label htmlFor="email"> password</label>
-                <input
-                  type="password"className="form-control"name="password"placeholder="Enter password"value={this.state.password} onChange={this.onChange}/>
+                <input type="password"className="form-control"name="password"placeholder="Enter password"value={this.state.password} onChange={this.onChange}/>
               </div>
           
               <button
-                type="submit"className="btn btn-lg btn-primary btn-block">Register!</button>
+                type="submit" className="btn btn-lg btn-primary btn-block">Register!</button>
             </form>
           </div>
         </div>

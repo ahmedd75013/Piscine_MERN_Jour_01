@@ -2,42 +2,47 @@
 import axios from 'axios'
 
 export const register = newUser => {
+  console.log('newUser', newUser)
   return axios
-    .post('users/register', {
+    .post('http://localhost:4242/users/register', {
       login: newUser.login,
       email: newUser.email,
       password: newUser.password
     })
     .then(response => {
-      console.log('Registered')
+      // console.log('Registered')
     })
+
 }
 
-export const login = user => {
+export const login = user => {  
+  console.log(user)
   return axios
-    .post('users/login', {
-      email: user.email,
+    .post('http://localhost:4242/users/login', {
+      login: user.login,
       password: user.password
     })
     .then(response => {
-      localStorage.setItem('usertoken', response.data)
-      return response.data
+      console.log(response)
+      localStorage.setItem('usertoken', response.data.token)
+      return response.data.token
+
     })
     .catch(err => {
-      console.log(err)
+      // console.log(err)
     })
 }
 
 export const getProfile = user => {
   return axios
     .get('users/profile', {
-      //headers: { Authorization: ` ${this.getToken()}` }
+      
     })
     .then(response => {
-      console.log(response)
+      // console.log(response)
       return response.data
     })
     .catch(err => {
-      console.log(err)
+      // console.log(err)
     })
 }

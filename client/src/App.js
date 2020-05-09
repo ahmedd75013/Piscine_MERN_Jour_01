@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router ,Route } from 'react-router-dom'
 
-import Navbar from './Component/Navbar'
-import Index from './Component/Index'
-import Login from './Component/Login'
-import Register from './Component/Register'
-import Profile from './Component/Profile'
+import Navbar from './component/Navbar'
+import Landing from './component/Landing'
+import Login from './component/Login'
+import Register from './component/Register'
+import Profile from './component/Profile'
 
 class App extends Component {
   render() {
@@ -13,11 +13,11 @@ class App extends Component {
          <Router>
         <div className="App">
           <Navbar />
-          <Route exact path="/" Component={Index} />
+          <Route exact path="/" component={Landing} />
           <div className="container">
-            <Route exact path="/register" Component={Register} />
-            <Route exact path="/login" Component={Login} />
-            <Route exact path="/profile" Component={Profile} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/profile" component={Profile} />
           </div>
         </div>
       </Router>

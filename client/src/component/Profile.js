@@ -14,6 +14,7 @@ class Profile extends Component {
   componentDidMount() {
     const token = localStorage.usertoken
     const decoded = jwt_decode(token)
+    console.log(decoded)
     this.setState({
       login: decoded.login,
       email: decoded.email
@@ -35,10 +36,7 @@ class Profile extends Component {
                 <td> login</td>
                 <td>{this.state.login}</td>
               </tr>
-              <tr>
-                <td>email</td>
-                <td>{this.state.email}</td>
-              </tr>
+            
             </tbody>
           </table>
         </div>

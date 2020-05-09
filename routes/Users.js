@@ -1,5 +1,5 @@
 const express = require('express')
-const users =express.Router()
+const users = express.Router()
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const bcrypt = require("bcrypt")
@@ -10,14 +10,17 @@ users.use(cors())
 process.env.SECRET_KEY = 'secret'
 
 users.post('/register' , (req , res) =>{
-    const today = new Data()
+
     const userData ={
         login:req.body.login,
         email:req.body.email,
         password:req.body.password,
-        created: today
+        type:true,
+    
 
     }
+
+    console.log(userData)
 
     User.findOne({
         email:req.body.email
@@ -37,7 +40,7 @@ users.post('/register' , (req , res) =>{
                 })
             })
         }else{
-            res.json({ error:"User already existe" })
+            res.json({ error:"L'utilisateur existe déjà" })
         }
     })
     .catch(err =>{
@@ -46,31 +49,35 @@ users.post('/register' , (req , res) =>{
 })
 
 users.post('/login' , (req , res) =>{
+    console.log(req.body)
     User.findOne({
-        email:req.body.email
+        login:req.body.login
     })
     .then(user =>{
+        console.log(user)
         if(user){
+
             if(bcrypt.compareSync(req.body.password,user.password))
             {
                 const payload = {
-                    _id:user._id,
+                 
                     login: user.login,
-                    email : user.email,
-                    password : user>password
+                    password : user.password,
+                   
                 }
                 let token = jwt.sign(payload,process.env.SECRET_KEY ,{
                     expiresIn:1440
                 })
-                res.send(token)
+                res.json({user ,token})
                 
             }else{
-                res.json({error: "User does not exist"})
+                
+                res.json({error:"L'utilisateur n'existe pas"})
                 
             }
           
         }else{
-            res.json({error:"User does not existe"})
+            res.json({error:"L'utilisateur n'existe pas"})
         }
     })
     .catch(err => {

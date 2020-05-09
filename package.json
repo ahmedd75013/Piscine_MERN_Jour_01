@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "mern4",
   "version": "1.0.0",
   "description": "",
@@ -18,29 +17,6 @@
     "mongodb":"^3.1.6",
     "mongoose": "^5.2.15",
     "nodemon":"^1.18.3"
-  }
-=======
-  "name": "d",
-  "version": "1.0.0",
-  "description": "",
-  "main": "ex_01.js",
-  "dependencies": {
-    "ejs": "^3.1.2",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ahmedd75013/Piscine_MERN_Jour_01.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ahmedd75013/Piscine_MERN_Jour_01/issues"
-  },
-  "homepage": "https://github.com/ahmedd75013/Piscine_MERN_Jour_01#readme"
->>>>>>> 263a6845de2a04355522e0209da3ce753c6e0033
-}
+  }}
+
+
