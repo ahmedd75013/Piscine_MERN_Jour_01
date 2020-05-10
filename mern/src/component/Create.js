@@ -50,7 +50,7 @@ export default class Create extends Component {
   render() {
     return (
     <div>
-      <h3>Create New Post</h3>
+      <h3>Create New blog</h3>
       <form onSubmit={async () => {
         console.log('ggg')
         const user = {

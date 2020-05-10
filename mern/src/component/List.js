@@ -55,9 +55,9 @@ export default class List extends Component {
         <table className="table">
           <thead className="thead-light">
             <tr>
+            <th>Titre</th>
               <th>Description</th>
-              <th>Titre</th>
-              <th>action</th>      
+              <th>Edit / Delete</th>      
             </tr>
           </thead>
           <tbody>

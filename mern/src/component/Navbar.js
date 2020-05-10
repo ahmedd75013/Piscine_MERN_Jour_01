@@ -34,7 +34,12 @@ class Landing extends Component {
        
         <li className="nav-item">
           <Link to="/List" className="nav-link">
-           List
+           modifier
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/Show" className="nav-link">
+           show
           </Link>
         </li>
         <li className="nav-item">
