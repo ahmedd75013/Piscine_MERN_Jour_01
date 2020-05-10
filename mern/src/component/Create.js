@@ -34,6 +34,11 @@ export default class Create extends Component {
 
   }
 
+  onChangeTitre(e) {
+    this.setState({
+      titre: e.target.value
+    })
+  }
 
   onChangeDescription(e) {
     this.setState({
@@ -41,24 +46,19 @@ export default class Create extends Component {
     })
   }
 
-  onChangeTitre(e) {
-    this.setState({
-      titre: e.target.value
-    })
-  }
 
   render() {
     return (
     <div>
       <h3>Create New blog</h3>
       <form onSubmit={async () => {
-        console.log('ggg')
+        // console.log('ggg')
         const user = {
           description: this.state.description,
           titre: this.state.titre
         }
         await axios.post('http://localhost:3001/ex/add', user);
-        window.location = '/list';
+        window.location = '/show';
       }}>
 
       <div className="form-group">

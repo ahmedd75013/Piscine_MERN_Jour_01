@@ -24,9 +24,9 @@ export default class Edit extends Component {
     axios.get('http://localhost:3001/ex/'+this.props.match.params.id)
       .then(response => {
         this.setState({
-        
-          description: response.data.description,
           titre: response.data.titre,
+          description: response.data.description,
+         
         
         })   
       })
@@ -48,6 +48,11 @@ export default class Edit extends Component {
 
   }
 
+  onChangeTitre(e) {
+    this.setState({
+      titre: e.target.value
+    })
+  }
 
 
   onChangeDescription(e) {
@@ -56,12 +61,7 @@ export default class Edit extends Component {
     })
   }
 
-  onChangeTitre(e) {
-    this.setState({
-      titre: e.target.value
-    })
-  }
-
+  
 
   onSubmit = (e) => {
     e.preventDefault();
@@ -98,7 +98,7 @@ console.log("this.state", this.state)
         </div>
       
         <div className="form-group">
-          <input type="submit" value="Edit Exercise Log" className="btn btn-primary" />
+          <input type="submit" value="Valide" className="btn btn-primary" />
         </div>
       </form>
     </div>

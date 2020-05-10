@@ -4,10 +4,9 @@ import axios from 'axios';
 
 const Exercise = props => (
   <tr>
-  
+   <td>{props.ex.titre}</td>
     <td>{props.ex.description}</td>
-    <td>{props.ex.titre}</td>
-    
+   
   </tr>
 )
 
@@ -48,14 +47,14 @@ export default class show extends Component {
   render() {
     return (
       <div>
-        <h3>List</h3>
+        <h3>Blog</h3>
         <table className="table">
           <thead className="thead-light">
-            <tr>
+           
             <th>Titre</th>
               <th>Description</th>
                
-            </tr>
+         
           </thead>
           <tbody>
             {this.exerciseList()}

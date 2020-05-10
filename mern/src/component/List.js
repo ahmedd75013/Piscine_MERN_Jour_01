@@ -4,9 +4,9 @@ import axios from 'axios';
 
 const Exercise = props => (
   <tr>
-  
-    <td>{props.ex.description}</td>
     <td>{props.ex.titre}</td>
+    <td>{props.ex.description}</td>
+  
     
     <td>
       <Link to={"/edit/"+props.ex._id}>edit</Link> | <a href="#" onClick={() => { props.deleteEx(props.ex._id) }}>delete</a>
@@ -68,3 +68,4 @@ export default class List extends Component {
     )
   }
 }
+
